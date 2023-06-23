@@ -53,15 +53,16 @@ Project goals:
 
 #### First-Time Visitor Goals
 
-- As a first-time visitor, I want to
+- As a first-time visitor, I want to start a new game.
+- As a first-time visitor, I want to see how many attempts I have left when playing.
 
 #### Returning Visitor Goals
 
-- As a returning visitor, I want to
+- As a returning visitor, I want to see my results.
 
 #### Frequent Visitor Goals
 
-- As a frequent visitor, I want to
+- As a frequent visitor, I want to be able to play the game using different categories
 
 ---
 
@@ -85,13 +86,6 @@ Features here
 
 ---
 
-![Home](docs/features/feature-home.png)
-
-- The homepage introduces the user to the website.
-- The user can select to read the instruction, start the quiz or see the high scores.
-
----
-
 ### Features Left to Implement
 
 In the future, I would like to:
@@ -108,7 +102,7 @@ The language used is Python
 
 ### Frameworks, Libraries & Programs Used
 
-[Balsamiq](https://balsamiq.com/wireframes/) - Used to create wireframes.
+[Lucid chart](https://www.lucidchart.com/pages/) - Used to create flowcharts.
 
 [Git](https://git-scm.com/) - For version control.
 
@@ -128,7 +122,7 @@ The language used is Python
 
 [Veed](https://www.veed.io/convert/mp4-to-gif?gad=1&gclid=CjwKCAjwgqejBhBAEiwAuWHioCzHSc5XTTdsnixrxavlvLKEi4i_YeN__Xol0nANQCBhw60caeyF3RoC31wQAvD_BwE) - To convert mp4 to gif
 
-## [Colorama](https://pypi.org/project/colorama/)
+[Colorama](https://pypi.org/project/colorama/) - To change colours in the terminal
 
 ## Deployment & Local Development
 
@@ -185,15 +179,17 @@ Please refer to [TESTING.md](TESTING.md) file for all testing carried out.
 
 - [Invent it with Python tutorial](https://inventwithpython.com/invent4thed/chapter8.html) - I used this tutorial to help me with understanding how to create a basic hangman game to build upon it using Python.
 
+- I used other student examples as a reference to understand how to build my own game and what is expected for the app and readme.md, [Hangaman 1](https://github.com/PedroCristo/portfolio_project_3), [Hangaman 2](https://github.com/one1189/hangman) those projects were also helpful to find resources that helped me build the game, such as the use of ASCII Art, Lucid Chart, Colorama or reference material.
+
 ### Content
 
-All questions were pulled from:
+All the words were pulled from:
 
 - [Here]()
 
 ### Media
 
-- [Credit 1](x)
+- [ASCII Art](x)
 
 ### Acknowledgments
 
