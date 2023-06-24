@@ -124,6 +124,10 @@ The language used is Python
 
 [Colorama](https://pypi.org/project/colorama/) - To change colours in the terminal
 
+[Heroku](https://id.heroku.com/) - To deploy the App.
+
+[ASCII Art Generator](https://patorjk.com/software/taag/#p=display&v=0&f=Ogre&t=The%20Hangman)
+
 ## Deployment & Local Development
 
 ### Deployment
@@ -177,7 +181,7 @@ Please refer to [TESTING.md](TESTING.md) file for all testing carried out.
 
 ### Code Used
 
-- [Invent it with Python tutorial](https://inventwithpython.com/invent4thed/chapter8.html) - I used this tutorial to help me with understanding how to create a basic hangman game to build upon it using Python.
+- [How to build HANGMAN with Python in 10 MINUTES](https://www.youtube.com/watch?v=m4nEnsavl6w) - I used this tutorial to help me with understanding how to create a basic hangman game to build upon it using Python.
 
 - I used other student examples as a reference to understand how to build my own game and what is expected for the app and readme.md, [Hangaman 1](https://github.com/PedroCristo/portfolio_project_3), [Hangaman 2](https://github.com/one1189/hangman) those projects were also helpful to find resources that helped me build the game, such as the use of ASCII Art, Lucid Chart, Colorama or reference material.
 
@@ -189,7 +193,7 @@ All the words were pulled from:
 
 ### Media
 
-- [ASCII Art](x)
+- [ASCII Art Generator](https://patorjk.com/software/taag/#p=display&v=0&f=Ogre&t=The%20Hangman)
 
 ### Acknowledgments
 
