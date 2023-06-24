@@ -68,3 +68,27 @@ def play(word):
         print("Congrats, you guessed the word! You win!")
     else:
         print("Sorry, you ran out of tries. The word was " + word + ". Maybe next time!")
+
+"""
+Gets the hangman stages,
+and it displays it.
+"""
+
+def display_hangman(tries):
+    
+    return stages[tries]
+
+"""
+Main function: it gets a word and pass it to play,
+Ask the user input for playing again or not,
+"""
+def main():
+    word = get_word()
+    play(word)
+    while input("Play Again? (Y/N) ").upper() == "Y":
+        word = get_word()
+        play(word)
+
+
+if __name__ == "__main__":
+    main()
