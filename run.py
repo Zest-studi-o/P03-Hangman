@@ -48,11 +48,11 @@ def welcome_player():
     return category
 
 
-"""
-    Prompts the user to select a category from a list.
-"""
-def select_category():
 
+def select_category():
+    """
+    Prompts the user to select a category from a list.
+    """
 
     while True:
         try:
@@ -76,23 +76,18 @@ def select_category():
 
 chosen_category = welcome_player()
 
-"""
-Returns a word for the game,
-it takes it from the imported list,
-converts all user input to uppercase.
-
-
-def get_word():
-    word = random.choice(word_list)
-    return word.upper()
-"""
 # Clear screen for better user visibility
 clear()
 
 word = ""
 
-# Generates a random word based on the category selected
 def get_word():
+
+    """
+    Returns a random word based on the category selected,
+    it takes it from the imported list,
+    converts all user input to uppercase.
+    """
     
     if chosen_category == "Countries":
         word = random.choice(country_list)
@@ -104,15 +99,16 @@ def get_word():
         word = random.choice(word_list)
         return word.upper()
 
-"""
-This function runs the game:
-Define variables, welcome the user to the game,
-the while loop displays a word to guess while this is not guessed,
-if the user inputs an already guessed letter it gives feedback,
-also if the user enters a wrong answer,
-otherwise the user gets positive feedback from guessing the word.
-"""
+
 def play(word):
+    """
+    This function runs the game:
+    Define variables, welcome the user to the game,
+    the while loop displays a word to guess while this is not guessed,
+    if the user inputs an already guessed letter it gives feedback,
+    also if the user enters a wrong answer,
+    otherwise the user gets positive feedback from guessing the word.
+    """
     word_completion = "_" * len(word)
     guessed = False
     guessed_letters = []
@@ -165,20 +161,20 @@ def play(word):
     else:
         print("Sorry, you ran out of tries. The word was " + word + ". Maybe next time!")
 
-"""
-Gets the hangman stages,
-and it displays it.
-"""
 
 def display_hangman(tries):
-    
+    """
+    Gets the hangman stages,
+    and it displays it.
+    """ 
     return stages[tries]
 
-"""
-Main function: it gets a word and pass it to play,
-Ask the user input for playing again or not,
-"""
+
 def main():
+    """
+    Main function: it gets a word and pass it to play,
+    Ask the user input for playing again or not,
+    """
     word = get_word()
     play(word)
     while input("Play Again? (Y/N) ").upper() == "Y":
