@@ -35,13 +35,14 @@ def welcome_player():
     while True:
         category = select_category()
 
-        decision = input(f"{name}, you have six lives and have selected {category}. \nAre you happy with your choice? (Y/N) ").upper()
+        decision = input(f"{name}, you have 6 lives and have selected {category}. \nAre you happy with your choice? (Y/N) ").upper()
 
         if decision == "Y":
             print("Let's play. Good luck!\n")
             break
         elif decision == "N":
             clear()
+            print(logo)
         else:
             print("Invalid input. Please enter 'Y' or 'N'.\n")
     
@@ -56,7 +57,7 @@ def select_category():
 
     while True:
         try:
-            selection = int(input("\nPlease select a category:\n1. Countries\n2. Food\n3. General\n"))
+            selection = int(input("\nPlease select a category:\n1. Countries\n2. Food\n3. General\n\n"))
             if 1 <= selection <= 3:
                 break
             else:
@@ -129,6 +130,7 @@ def play(word):
                 print("You already guessed the letter", guess)
             elif guess not in word:
                 print(guess, "is not in the word.")
+                print("You have", (tries -1), "attempts left.")
                 tries -= 1
                 guessed_letters.append(guess)
             else:
