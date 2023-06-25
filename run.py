@@ -1,15 +1,108 @@
 import random
+import os
+
 from art import stages, logo
 from words import word_list
+from countries import country_list
+from food_and_drink import fd_list
+
+
+def clear():
+    """
+    Clears the screen
+    """
+
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
+
+
+def welcome_player():
+    """
+    Welcomes the user, asks to select a category and 
+    checks whether they are happy with their decision
+    """
+    
+    word = ""
+    print(logo)
+    name = input("Please enter your name: ").capitalize()
+    print("\n")
+    print(f"Welcome to the game, {name}!")
+    print("\n")
+    
+
+    while True:
+        category = select_category()
+
+        decision = input(f"{name}, you have six lives and have selected {category}. \nAre you happy with your choice? (Y/N) ").upper()
+
+        if decision == "Y":
+            print("Let's play. Good luck!\n")
+            break
+        elif decision == "N":
+            clear()
+        else:
+            print("Invalid input. Please enter 'Y' or 'N'.\n")
+    
+    return category
+
+
+"""
+    Prompts the user to select a category from a list.
+"""
+def select_category():
+
+
+    while True:
+        try:
+            selection = int(input("\nPlease select a category:\n1. Countries\n2. Food\n3. General\n"))
+            if 1 <= selection <= 3:
+                break
+            else:
+                print("Invalid entry. Please select a valid category.\n")
+        except ValueError:
+            print("Please enter a number between 1 and 3.\n")
+
+    if selection == 1:
+        category = "Countries"
+    elif selection == 2:
+        category = "Food"
+    else:
+        category = "General"
+
+    return category
+
+
+chosen_category = welcome_player()
 
 """
 Returns a word for the game,
 it takes it from the imported list,
 converts all user input to uppercase.
-"""
+
+
 def get_word():
     word = random.choice(word_list)
     return word.upper()
+"""
+# Clear screen for better user visibility
+clear()
+
+word = ""
+
+# Generates a random word based on the category selected
+def get_word():
+    
+    if chosen_category == "Countries":
+        word = random.choice(country_list)
+        return word.upper()
+    elif chosen_category == "Food":
+        word = random.choice(fd_list)
+        return word.upper()
+    else:
+        word = random.choice(word_list)
+        return word.upper()
 
 """
 This function runs the game:
@@ -25,11 +118,14 @@ def play(word):
     guessed_letters = []
     guessed_words = []
     tries = 6
+
+#Welcome messages
     print(logo)
-    print("Welcome to the game!")
+    print("Let's start playing!")
     print(display_hangman(tries))
     print(word_completion)
     print("\n")
+
     while not guessed and tries > 0:
         guess = input("Please guess a letter or word: ").upper()
         if len(guess) == 1 and guess.isalpha():
