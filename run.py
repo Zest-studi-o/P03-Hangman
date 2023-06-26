@@ -6,6 +6,8 @@ from words import word_list
 from countries import country_list
 from food_and_drink import fd_list
 
+# CONSTS
+CORRECT_GUESSED = 25
 
 def clear():
     """
@@ -30,7 +32,7 @@ def welcome_player():
     print("\n")
     print(f"Welcome to the game, {name}!")
     print("\n")
-    
+    score = 0
 
     while True:
         category = select_category()
@@ -115,6 +117,7 @@ def play(word):
     guessed_letters = []
     guessed_words = []
     tries = 6
+    score = 0
 
 #Welcome messages
     print(logo)
@@ -123,7 +126,10 @@ def play(word):
     print(word_completion)
     print("\n")
 
+    #While the word is not guessed and the player still has tries left
     while not guessed and tries > 0:
+        display_score(score)
+
         guess = input("Please guess a letter or word: ").upper()
         if len(guess) == 1 and guess.isalpha():
 
@@ -141,6 +147,10 @@ def play(word):
             #Letter guessed in the word
             else:
                 print("Good job,", guess, "is in the word!")
+                
+                #guessed_right += 1
+                score += CORRECT_GUESSED
+
                 guessed_letters.append(guess)
                 word_as_list = list(word_completion)
                 indices = [i for i, letter in enumerate(word) if letter == guess]
@@ -170,11 +180,12 @@ def play(word):
     #Player WINS
     if guessed:
         print("Congrats, you guessed the word! You win!")
-        
+    
+
     #Player LOSES
     else:
-        print("Sorry, you ran out of tries. The word was " + word + ". Maybe next time!")
-
+        print("Sorry, you ran out of tries. The word was " + word + ". Maybe next time!\n")
+    display_score(score)
 
 def display_hangman(tries):
     """
@@ -183,6 +194,13 @@ def display_hangman(tries):
     """ 
     return stages[tries]
 
+def display_score(score):
+    """
+    Display player score during the game
+    """
+   
+    print(f"SCORE: {score}\n")
+    
 
 def main():
     """
