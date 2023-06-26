@@ -8,6 +8,7 @@ from food_and_drink import fd_list
 
 # CONSTS
 CORRECT_GUESSED = 25
+FULL_WORD_SCORE = 200
 
 def clear():
     """
@@ -162,8 +163,10 @@ def play(word):
 
         #Player guesses the FULL word            
         elif len(guess) == len(word) and guess.isalpha():
+            #The word guessed has been entered again
             if guess in guessed_words:
                 print("You already guessed the word", guess)
+            #The word guessed is not the right guess
             elif guess != word:
                 print(guess, "is not the word.")
                 tries -= 1
@@ -171,6 +174,7 @@ def play(word):
             else:
                 guessed = True
                 word_completion = word
+        #Unsupported guesses
         else:
             print("Not a valid guess.")
         print(display_hangman(tries))
@@ -179,8 +183,9 @@ def play(word):
 
     #Player WINS
     if guessed:
-        print("Congrats, you guessed the word! You win!")
-    
+        print("Congrats, you guessed the word! You win!\n")
+        #Adds extra score if the full word is guessed
+        score = score + FULL_WORD_SCORE
 
     #Player LOSES
     else:

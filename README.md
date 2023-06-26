@@ -88,15 +88,26 @@ Features here
 
 - This does abc.
 
+**Category selection**
+
+![Category selection image]()
+
+- When the user selects to start the game, the terminal displays options to select between different word categories grouped by themes.
+
+**Score counter**
+
+![Score counter image]()
+
+- This counts the score obtained by the player, adds 25 per letter guessed and 200 if the player guesses the word in full, it displays this data to the terminal for user feedback.
 ---
 
 ### Features Left to Implement
 
 In the future, I would like to:
 
-- Score counter.
+- Refine the score counter so it would add more points the earlier the full word is guessed.
 
-- Leader board.
+- Add a Leaderboard.
 
 - Add colours to the terminal.
 
@@ -132,7 +143,7 @@ The language used is Python
 
 [Heroku](https://id.heroku.com/) - To deploy the App.
 
-[ASCII Art Generator](https://patorjk.com/software/taag/#p=display&v=0&f=Ogre&t=The%20Hangman)
+[ASCII Art Generator](https://patorjk.com/)
 
 ## Deployment & Local Development
 
