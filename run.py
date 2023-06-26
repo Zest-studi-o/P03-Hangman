@@ -1,3 +1,6 @@
+import gspread
+from google.oauth2.service_account import Credentials
+
 import random
 import os
 
@@ -6,7 +9,25 @@ from words import word_list
 from countries import country_list
 from food_and_drink import fd_list
 
-# CONSTS
+# API CONSTS
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('hangman_leaderboard')
+
+leaderboard = SHEET.worksheet("leaderboard")
+
+data = leaderboard.get_all_values()
+
+#print(data)
+
+# SCORECOUNTER CONSTS
 CORRECT_GUESSED = 25
 FULL_WORD_SCORE = 200
 
