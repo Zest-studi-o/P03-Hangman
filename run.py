@@ -126,13 +126,19 @@ def play(word):
     while not guessed and tries > 0:
         guess = input("Please guess a letter or word: ").upper()
         if len(guess) == 1 and guess.isalpha():
+
+            #Letter guessed repeated
             if guess in guessed_letters:
                 print("You already guessed the letter", guess)
+            
+            #Letter guessed NOT in the word
             elif guess not in word:
                 print(guess, "is not in the word.")
                 print("You have", (tries -1), "attempts left.")
                 tries -= 1
                 guessed_letters.append(guess)
+
+            #Letter guessed in the word
             else:
                 print("Good job,", guess, "is in the word!")
                 guessed_letters.append(guess)
@@ -143,6 +149,8 @@ def play(word):
                 word_completion = "".join(word_as_list)
                 if "_" not in word_completion:
                     guessed = True
+
+        #Player guesses the FULL word            
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
                 print("You already guessed the word", guess)
@@ -158,8 +166,12 @@ def play(word):
         print(display_hangman(tries))
         print(word_completion)
         print("\n")
+
+    #Player WINS
     if guessed:
         print("Congrats, you guessed the word! You win!")
+        
+    #Player LOSES
     else:
         print("Sorry, you ran out of tries. The word was " + word + ". Maybe next time!")
 

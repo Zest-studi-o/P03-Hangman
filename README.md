@@ -49,12 +49,16 @@ Project goals:
 
 - To encourage people to play the hangman game.
 
+- To provide an easy and user-friendly command line game.
+
 ### User Stories
 
 #### First-Time Visitor Goals
 
 - As a first-time visitor, I want to start a new game.
 - As a first-time visitor, I want to see how many attempts I have left when playing.
+- As a first-time visitor, I want to see the words I guessed so far displayed.
+- As a first-time visitor, I want the app to ask me if I want to play again or not when finishing.
 
 #### Returning Visitor Goals
 
@@ -90,7 +94,15 @@ Features here
 
 In the future, I would like to:
 
-- Abc
+- Score counter.
+
+- Leader board.
+
+- Add colours to the terminal.
+
+- Add a feature in which the user can select words sorted by length.
+
+- Add a multiplayer feature.
 
 ---
 
@@ -115,12 +127,6 @@ The language used is Python
 [Shields](https://shields.io/) - To add badges to the readme file.
 
 [Amiresponsive](https://ui.dev/amiresponsive) - To generate a mockup in different screen sizes.
-
-[Bandicam](https://www.bandicam.com/es/) - To screen record bugs and features.
-
-[Windows photo feature](https://www.microsoft.com/en-us/windows/photo-movie-editor) - To trim screen recording.
-
-[Veed](https://www.veed.io/convert/mp4-to-gif?gad=1&gclid=CjwKCAjwgqejBhBAEiwAuWHioCzHSc5XTTdsnixrxavlvLKEi4i_YeN__Xol0nANQCBhw60caeyF3RoC31wQAvD_BwE) - To convert mp4 to gif
 
 [Colorama](https://pypi.org/project/colorama/) - To change colours in the terminal
 
@@ -187,13 +193,15 @@ Please refer to [TESTING.md](TESTING.md) file for all testing carried out.
 
 ### Content
 
-All the words were pulled from:
+All the words in the different categories are taken from:
 
-- [Here]()
+- [Countries](https://github.com/one1189/hangman)
+- [Food](https://github.com/one1189/hangman)
+- [General](https://www.youtube.com/watch?v=m4nEnsavl6w)
 
 ### Media
 
-- [ASCII Art Generator](https://patorjk.com/software/taag/#p=display&v=0&f=Ogre&t=The%20Hangman)
+- [ASCII Art Generator - Logo](https://patorjk.com/software/taag/#p=display&v=0&f=Ogre&t=The%20Hangman)
 
 ### Acknowledgments
 
