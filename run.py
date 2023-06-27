@@ -25,11 +25,13 @@ leaderboard = SHEET.worksheet("leaderboard")
 
 data = leaderboard.get_all_values()
 
-#print(data)
+print(data)
 
 # SCORECOUNTER CONSTS
 CORRECT_GUESSED = 25
 FULL_WORD_SCORE = 200
+
+name = ""
 
 def clear():
     """
@@ -40,7 +42,19 @@ def clear():
         os.system('cls')
     else:
         os.system('clear')
+"""
+def player_name():
+    while True:
+            name = input("Please enter your name: ").capitalize()
+            print("\n")
 
+            #Ensures that the user enters a name and this is not left blank
+            if len(name) == 0:
+                print("This is not a valid name!")
+                continue
+            else:
+                break 
+"""
 
 def welcome_player():
     """
@@ -52,19 +66,20 @@ def welcome_player():
     print(logo)
 
     while True:
-        name = input("Please enter your name: ").capitalize()
-        print("\n")
+            name = input("Please enter your name: ").capitalize()
+            print("\n")
 
-        #Ensures that the user enters a name and this is not left blank
-        if len(name) == 0:
-            print("This is not a valid name!")
-            continue
-        else:
-            break
+            #Ensures that the user enters a name and this is not left blank
+            if len(name) == 0:
+                print("This is not a valid name!")
+                continue
+            else:
+                break
 
-        print(f"Welcome to the game, {name}!")
-        print("\n")
-    
+            print(f"Welcome to the game, {name}!")
+            print("\n")
+
+    return name
 
 
     #Starts scores at value 0
@@ -225,6 +240,8 @@ def play(word):
     #Player LOSES
     else:
         print("Sorry, you ran out of tries. The word was " + word + ". Maybe next time!\n")
+    
+    update_worksheet(data, score)
     display_score(score)
 
 def display_hangman(tries):
@@ -240,7 +257,24 @@ def display_score(score):
     """
    
     print(f"SCORE: {score}\n")
-    
+
+def update_worksheet(data, score):
+    """
+    Update a new row in the Hangman worksheet
+    This updates a new row with the name and score.
+    """
+     # name = []
+     #name = get_name()
+    # get(name)
+    print(name)
+    print("Updating Leaderboard...\n")
+    worksheet_to_update = SHEET.worksheet("leaderboard")
+     #worksheet_to_update.append_row([
+       #str(name[0:7]), score])
+    print(name)
+    worksheet_to_update.append_row([str(name[0:7]), score])
+    print("Leaderboard updated successfully.\n")  
+
 
 def main():
     """
@@ -256,3 +290,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
