@@ -75,8 +75,8 @@ def welcome_player():
         else:
             break
 
-        print(f"Welcome to the game, {name}!")
-        print("\n")
+    print(f"Welcome to the game, {name}!")
+    print("\n")
 
 
     #Starts scores at value 0
