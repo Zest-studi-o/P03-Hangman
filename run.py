@@ -64,22 +64,19 @@ def welcome_player():
     
     word = ""
     print(logo)
-
     while True:
-            name = input("Please enter your name: ").capitalize()
-            print("\n")
+        name = input("Please enter your name: ").capitalize()
+        print("\n")
 
-            #Ensures that the user enters a name and this is not left blank
-            if len(name) == 0:
-                print("This is not a valid name!")
-                continue
-            else:
-                break
+        #Ensures that the user enters a name and this is not left blank
+        if len(name) == 0:
+            print("This is not a valid name!")
+            continue
+        else:
+            break
 
-            print(f"Welcome to the game, {name}!")
-            print("\n")
-
-    return name
+        print(f"Welcome to the game, {name}!")
+        print("\n")
 
 
     #Starts scores at value 0
