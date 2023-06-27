@@ -61,7 +61,7 @@ def welcome_player():
     Welcomes the user, asks to select a category and 
     checks whether they are happy with their decision
     """
-    
+    global name 
     word = ""
     print(logo)
     while True:
@@ -238,8 +238,10 @@ def play(word):
     else:
         print("Sorry, you ran out of tries. The word was " + word + ". Maybe next time!\n")
     
+    print(data)
     update_worksheet(data, score)
     display_score(score)
+    display_name(name)
 
 def display_hangman(tries):
     """
@@ -255,6 +257,14 @@ def display_score(score):
    
     print(f"SCORE: {score}\n")
 
+
+def display_name(name):
+    """
+    Display player name during the game
+    """
+   
+    print(f"NAME: {name}\n")
+
 def update_worksheet(data, score):
     """
     Update a new row in the Hangman worksheet
@@ -263,15 +273,16 @@ def update_worksheet(data, score):
      # name = []
      #name = get_name()
     # get(name)
-    print(name)
+    
     print("Updating Leaderboard...\n")
     worksheet_to_update = SHEET.worksheet("leaderboard")
      #worksheet_to_update.append_row([
        #str(name[0:7]), score])
+    
     print(name)
     worksheet_to_update.append_row([str(name[0:7]), score])
-    print("Leaderboard updated successfully.\n")  
-
+    print("Leaderboard updated successfully.\n")
+    
 
 def main():
     """
