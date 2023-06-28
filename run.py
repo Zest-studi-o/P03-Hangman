@@ -42,27 +42,13 @@ def clear():
         os.system('cls')
     else:
         os.system('clear')
-"""
-def player_name():
-    while True:
-            name = input("Please enter your name: ").capitalize()
-            print("\n")
-
-            #Ensures that the user enters a name and this is not left blank
-            if len(name) == 0:
-                print("This is not a valid name!")
-                continue
-            else:
-                break 
-"""
 
 def welcome_player():
     """
     Welcomes the user, asks to select a category and 
     checks whether they are happy with their decision
     """
-    global name 
-    word = ""
+    global name
     print(logo)
     while True:
         name = input("Please enter your name: ").capitalize()
@@ -239,7 +225,7 @@ def play(word):
         print("Sorry, you ran out of tries. The word was " + word + ". Maybe next time!\n")
     
     print(data)
-    update_worksheet(data, score)
+    update_worksheet(score)
     display_score(score)
     display_name(name)
 
@@ -260,28 +246,44 @@ def display_score(score):
 
 def display_name(name):
     """
-    Display player name during the game
+    Display player name
     """
    
     print(f"NAME: {name}\n")
 
-def update_worksheet(data, score):
+def update_worksheet(score):
     """
     Update a new row in the Hangman worksheet
     This updates a new row with the name and score.
     """
-     # name = []
-     #name = get_name()
-    # get(name)
     
     print("Updating Leaderboard...\n")
     worksheet_to_update = SHEET.worksheet("leaderboard")
-     #worksheet_to_update.append_row([
-       #str(name[0:7]), score])
-    
-    print(name)
+
+    #print(name)
+    display_leaderboard()
     worksheet_to_update.append_row([str(name[0:7]), score])
     print("Leaderboard updated successfully.\n")
+
+def display_leaderboard():
+    """
+    Displays to the players the 15 best scores
+    """
+    score_sheet = SHEET.worksheet("leaderboard").get_all_values()[1:]
+    for data in score_sheet:
+        data[1] = (data[1])
+
+    update_data = sorted(score_sheet, key=lambda x: int(x[1]), reverse=True)
+
+    
+    if(len(update_data) < 10):
+        count = len(update_data)
+    else:
+        count = 10
+
+    for i in range(0, count):
+        print(f"""
+        {i+1}\t{update_data[i][0]}\t  {update_data[i][1]}""")
     
 
 def main():
@@ -298,5 +300,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
