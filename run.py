@@ -25,13 +25,12 @@ leaderboard = SHEET.worksheet("leaderboard")
 
 data = leaderboard.get_all_values()
 
-print(data)
-
 # SCORECOUNTER CONSTS
 CORRECT_GUESSED = 25
 FULL_WORD_SCORE = 200
 
 name = ""
+
 
 def clear():
     """
@@ -43,9 +42,10 @@ def clear():
     else:
         os.system('clear')
 
+
 def welcome_player():
     """
-    Welcomes the user, asks to select a category and 
+    Welcomes the user, asks to select a category and
     checks whether they are happy with their decision
     """
     global name
@@ -54,7 +54,7 @@ def welcome_player():
         name = input("Please enter your name: ").capitalize()
         print("\n")
 
-        #Ensures that the user enters a name and this is not left blank
+        # Ensures that the user enters a name and this is not left blank
         if len(name) == 0:
             print("This is not a valid name!")
             continue
@@ -64,14 +64,13 @@ def welcome_player():
     print(f"Welcome to the game, {name}!")
     print("\n")
 
-
-    #Starts scores at value 0
+    # Starts scores at value 0
     score = 0
 
     while True:
         category = select_category()
 
-        decision = input(f"{name}, you have 6 lives and have selected {category}. \nAre you happy with your choice? (Y/N) ").upper()
+        decision = input(f"{name}, you have 6 lives and have selected {category}.\nAre you happy with your choice? (Y/N) ").upper()
 
         if decision == "Y":
             print("Let's play. Good luck!\n")
@@ -81,9 +80,8 @@ def welcome_player():
             print(logo)
         else:
             print("Invalid input. Please enter 'Y' or 'N'.\n")
-    
-    return category
 
+    return category
 
 
 def select_category():
@@ -118,6 +116,7 @@ clear()
 
 word = ""
 
+
 def get_word():
 
     """
@@ -125,7 +124,7 @@ def get_word():
     it takes it from the imported list,
     converts all user input to uppercase.
     """
-    
+
     if chosen_category == "Countries":
         word = random.choice(country_list)
         return word.upper()
@@ -153,36 +152,34 @@ def play(word):
     tries = 6
     score = 0
 
-#Welcome messages
+# Welcome messages
     print(logo)
     print("Let's start playing!")
     print(display_hangman(tries))
     print(word_completion)
     print("\n")
 
-    #While the word is not guessed and the player still has tries left
+    # While the word is not guessed and the player still has tries left
     while not guessed and tries > 0:
         display_score(score)
 
         guess = input("Please guess a letter or word: ").upper()
         if len(guess) == 1 and guess.isalpha():
 
-            #Letter guessed repeated
+            # Letter guessed repeated
             if guess in guessed_letters:
                 print("You already guessed the letter", guess)
-            
-            #Letter guessed NOT in the word
+
+            # Letter guessed NOT in the word
             elif guess not in word:
                 print(guess, "is not in the word.")
-                print("You have", (tries -1), "attempts left.")
+                print("You have", (tries - 1), "attempts left.")
                 tries -= 1
                 guessed_letters.append(guess)
 
-            #Letter guessed in the word
+            # Letter guessed in the word
             else:
                 print("Good job,", guess, "is in the word!")
-                
-                #guessed_right += 1
                 score += CORRECT_GUESSED
 
                 guessed_letters.append(guess)
@@ -194,12 +191,12 @@ def play(word):
                 if "_" not in word_completion:
                     guessed = True
 
-        #Player guesses the FULL word            
+        # Player guesses the FULL word
         elif len(guess) == len(word) and guess.isalpha():
-            #The word guessed has been entered again
+            # The word guessed has been entered again
             if guess in guessed_words:
                 print("You already guessed the word", guess)
-            #The word guessed is not the right guess
+            # The word guessed is not the right guess
             elif guess != word:
                 print(guess, "is not the word.")
                 tries -= 1
@@ -207,40 +204,42 @@ def play(word):
             else:
                 guessed = True
                 word_completion = word
-        #Unsupported guesses
+        # Unsupported guesses
         else:
             print("Not a valid guess.")
         print(display_hangman(tries))
         print(word_completion)
         print("\n")
 
-    #Player WINS
+    # Player WINS
     if guessed:
         print("Congrats, you guessed the word! You win!\n")
-        #Adds extra score if the full word is guessed
+        # Adds extra score if the full word is guessed
         score = score + FULL_WORD_SCORE
 
-    #Player LOSES
+    # Player LOSES
     else:
         print("Sorry, you ran out of tries. The word was " + word + ". Maybe next time!\n")
-    
+
     print(data)
     update_worksheet(score)
     display_score(score)
     display_name(name)
 
+
 def display_hangman(tries):
     """
     Gets the hangman stages,
-    and it displays it.
-    """ 
+    and it displays it
+    """
     return stages[tries]
+
 
 def display_score(score):
     """
     Display player score during the game
     """
-   
+
     print(f"SCORE: {score}\n")
 
 
@@ -248,22 +247,23 @@ def display_name(name):
     """
     Display player name
     """
-   
+
     print(f"NAME: {name}\n")
+
 
 def update_worksheet(score):
     """
     Update a new row in the Hangman worksheet
     This updates a new row with the name and score.
     """
-    
+
     print("Updating Leaderboard...\n")
     worksheet_to_update = SHEET.worksheet("leaderboard")
 
-    #print(name)
     display_leaderboard()
     worksheet_to_update.append_row([str(name[0:7]), score])
     print("Leaderboard updated successfully.\n")
+
 
 def display_leaderboard():
     """
@@ -275,8 +275,7 @@ def display_leaderboard():
 
     update_data = sorted(score_sheet, key=lambda x: int(x[1]), reverse=True)
 
-    
-    if(len(update_data) < 10):
+    if (len(update_data) < 10):
         count = len(update_data)
     else:
         count = 10
@@ -284,7 +283,7 @@ def display_leaderboard():
     for i in range(0, count):
         print(f"""
         {i+1}\t{update_data[i][0]}\t  {update_data[i][1]}""")
-    
+
 
 def main():
     """
