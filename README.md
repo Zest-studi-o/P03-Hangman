@@ -4,7 +4,7 @@
 
 A version of the classic game The hangman using the command line and Python programming language deployed with Heroku.
 
-Visit the live site: [Hangman]()
+Visit the live site: [The Hangman]()
 
 # Table of contents
 
@@ -80,25 +80,29 @@ Here flowchart.
 
 #### Existing Features
 
-Features here
+**Welcome screen**
 
-**Feature A**
+![Welcome screen]()
 
-![Feature A image]()
-
-- This does abc.
+- The user is welcomed to the game, the can input their name and ensure they are happy with their selected option.
 
 **Category selection**
 
-![Category selection image]()
+![Select category]()
 
-- When the user selects to start the game, the terminal displays options to select between different word categories grouped by themes.
+- The user can select a word category to play the game. When the user selects to start the game, the terminal displays options to select between different word categories grouped by themes.
 
 **Score counter**
 
-![Score counter image]()
+![Score counter]()
 
 - This counts the score obtained by the player, adds 25 per letter guessed and 200 if the player guesses the word in full, it displays this data to the terminal for user feedback.
+
+**Leaderboard**
+
+![Leaderboard]()
+
+- When finishing the game the user can see the leaderboard showing the top 10 scores achieved by the players. 
 ---
 
 ### Features Left to Implement
@@ -108,6 +112,8 @@ In the future, I would like to:
 - Refine the score counter so it would add more points the earlier the full word is guessed.
 
 - Add colours to the terminal.
+
+- Add more ASCII art and formating to the terminal.
 
 - Add a feature in which the user can select words sorted by length.
 
@@ -131,8 +137,6 @@ The language used is Python
 
 [Code from anywhere](https://app.codeanywhere.com/) - To write, edit and save code.
 
-[Google Fonts](https://fonts.google.com/) - To import fonts for the website.
-
 [Shields](https://shields.io/) - To add badges to the readme file.
 
 [Amiresponsive](https://ui.dev/amiresponsive) - To generate a mockup in different screen sizes.
@@ -140,6 +144,8 @@ The language used is Python
 [Colorama](https://pypi.org/project/colorama/) - To change colours in the terminal
 
 [Heroku](https://id.heroku.com/) - To deploy the App.
+
+[Code Institute template](https://github.com/Code-Institute-Org/p3-template) - To run the game in the terminal using Heroku.
 
 [ASCII Art Generator](https://patorjk.com/)
 

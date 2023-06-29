@@ -1,10 +1,10 @@
-# THE GAMER QUIZ
+# THE HANGMAN
 
-![The Gamer Quiz](docs/project.png)
+![The Hangman]()
 
-The Gamer Quiz is an interactive front-end web application in quiz format, based on video games.
+A version of the classic game The hangman using the command line and Python programming language deployed with Heroku.
 
-Visit the live site: [The Gamer Quiz](https://zest-studi-o.github.io/P02-The-Gamer-Quiz/)
+Visit the live site: [The Hangman]()
 
 ## CONTENTS
 
@@ -41,12 +41,12 @@ I used Lighthouse within the Chrome Developer Tools to test the performance, acc
 
 #### Desktop Results
 
-![Home Page]()
+![Desktop]()
 
 
 #### Mobile Results
 
-![Home Page]()
+![Mobile]()
 
 ---
 
@@ -59,7 +59,7 @@ I used Lighthouse within the Chrome Developer Tools to test the performance, acc
 `First-Time Visitors`
 | Goals | How are they achieved? |
 | :--- | :--- |
-| As a first-time visitor, I want to start a new game using the comand line. | The user can easyly iniciate a new game using the console |
+| As a first-time visitor, I want to start a new game using the comand line. | The user can easily iniciate a new game using the console |
 | As a first-time visitor, I want to see how many attempts I have left when playing. | There is a feature in which the user is notified how many attempts left are before finishing the game |
 | As a first-time visitor, I want to see the words I guessed so far displayed. | The user can see the words guessed correctly as part of the word in the console |
 | As a first-time visitor, I want the app to ask me if I want to play again or not when finishing. | The app asks the user whether they would like to continue or start a new game |
@@ -96,7 +96,10 @@ Each device tested the site using the following browsers:
 `All pages`
 | Feature | Expected Result | Testing Performed | Actual Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Abc | abc | abc | abc | Pass or Fail |
+| Welcome screen | abc | abc | abc | Pass or Fail |
+| Select category | abc | abc | abc | Pass or Fail |
+| Score counter | abc | abc | abc | Pass or Fail |
+| Leaderboard | abc | abc | abc | Pass or Fail |
 
 
 ---
