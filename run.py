@@ -62,7 +62,6 @@ def welcome_player():
             break
 
     print(f"Welcome to the game, {name}!")
-    print("\n")
 
     # Starts scores at value 0
     score = 0
@@ -70,7 +69,9 @@ def welcome_player():
     while True:
         category = select_category()
 
-        decision = input(f"{name}, you have 6 lives and have selected {category}.\nAre you happy with your choice? (Y/N) ").upper()
+        decision = input(f"{name}, you have 6 lives "
+                         f"and have selected {category}.\n"
+                         "Are you happy with your choice? (Y/N) ").upper()
 
         if decision == "Y":
             print("Let's play. Good luck!\n")
@@ -91,7 +92,8 @@ def select_category():
 
     while True:
         try:
-            selection = int(input("\nPlease select a category:\n1. Countries\n2. Food\n3. General\n\n"))
+            selection = int(input("\nPlease select a category: \n"
+                            "1. Countries\n2. Food\n3. General\n\n"))
             if 1 <= selection <= 3:
                 break
             else:
@@ -184,7 +186,8 @@ def play(word):
 
                 guessed_letters.append(guess)
                 word_as_list = list(word_completion)
-                indices = [i for i, letter in enumerate(word) if letter == guess]
+                indices = [i for i,
+                           letter in enumerate(word) if letter == guess]
                 for index in indices:
                     word_as_list[index] = guess
                 word_completion = "".join(word_as_list)
@@ -219,9 +222,9 @@ def play(word):
 
     # Player LOSES
     else:
-        print("Sorry, you ran out of tries. The word was " + word + ". Maybe next time!\n")
+        print("Sorry, you ran out of tries."
+              "The word was " + word + ". Maybe next time!\n")
 
-    print(data)
     update_worksheet(score)
     display_score(score)
     display_name(name)
@@ -262,6 +265,7 @@ def update_worksheet(score):
 
     display_leaderboard()
     worksheet_to_update.append_row([str(name[0:7]), score])
+    print("\n")
     print("Leaderboard updated successfully.\n")
 
 
