@@ -55,7 +55,7 @@ Project goals:
 
 #### First-Time Visitor Goals
 
-- As a first-time visitor, I want to start a new game.
+- As a first-time visitor, I want to start a new game using the comand line.
 - As a first-time visitor, I want to see how many attempts I have left when playing.
 - As a first-time visitor, I want to see the words I guessed so far displayed.
 - As a first-time visitor, I want the app to ask me if I want to play again or not when finishing.
@@ -66,7 +66,7 @@ Project goals:
 
 #### Frequent Visitor Goals
 
-- As a frequent visitor, I want to be able to play the game using different categories
+- As a frequent visitor, I want to be able to play the game using different categories.
 
 ---
 
