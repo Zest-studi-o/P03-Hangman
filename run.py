@@ -3,6 +3,7 @@ from google.oauth2.service_account import Credentials
 
 import random
 import os
+import sys
 
 from art import stages, logo
 from words import word_list
@@ -29,7 +30,10 @@ data = leaderboard.get_all_values()
 CORRECT_GUESSED = 25
 FULL_WORD_SCORE = 200
 
-name = ""
+GAME_SELECT ="""Please select an option:\n
+1 - Play again\n
+2 - Leaderboard\n
+3 - Exit game\n"""
 
 
 def clear():
@@ -238,20 +242,20 @@ def display_hangman(tries):
     return stages[tries]
 
 
-def display_score(score):
-    """
-    Display player score during the game
-    """
-
-    print(f"SCORE: {score}\n")
-
-
 def display_name(name):
     """
     Display player name
     """
 
     print(f"NAME: {name}\n")
+
+
+def display_score(score):
+    """
+    Display player score during the game
+    """
+
+    print(f"SCORE: {score}\n")
 
 
 def update_worksheet(score):
@@ -288,17 +292,41 @@ def display_leaderboard():
         print(f"""
         {i+1}\t{update_data[i][0]}\t  {update_data[i][1]}""")
 
+def exit_program():
+    """
+    Function to exit the game
+    """
+    print(f"\n\tThanks for playing, {name}.\n")
+    print(f"\n\tExiting the game..")
+    sys.exit(0)
 
 def main():
     """
     Main function: it gets a word and pass it to play,
-    Ask the user input for playing again or not,
+    When finishing the game asks the user input for:
+    1 - Play again
+    2 - Leaderboard
+    3 - Exit game
     """
-    word = get_word()
-    play(word)
-    while input("Play Again? (Y/N) ").upper() == "Y":
-        word = get_word()
-        play(word)
+    play_game = True
+    while True:
+        if play_game:
+            word = get_word()
+            play(word)
+
+        user_input = input(f"{GAME_SELECT}").upper()
+        if user_input == "1":
+            print(f"\n\tYou have selected to continue playing.\n")
+            play_game = True
+        elif user_input == "2":
+            display_leaderboard()
+            play_game = False
+        elif user_input == "3":
+            exit_program()
+        else:
+            print(f"""\n\t
+            That is not a valid option. Please try again.\n""")
+            play_game = False
 
 
 if __name__ == "__main__":
