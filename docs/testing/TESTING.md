@@ -9,6 +9,7 @@ Visit the live site: [The Gamer Quiz](https://zest-studi-o.github.io/P02-The-Gam
 ## CONTENTS
 
 * [AUTOMATED TESTING](#AUTOMATED-TESTING)
+  * [Python Linter](#Python-Linter)
   * [Lighthouse](#Lighthouse)
 * [MANUAL TESTING](#MANUAL-TESTING)
   * [Testing User Stories](#Testing-User-Stories)
@@ -25,6 +26,14 @@ Afterwards, formal test cases were developed and executed.
 Automated testing was carried out at a later stage using validators and all errors were fixed, it was checked that all user goals are met and after this, a test case table was created. To finish, the project was shared in Slack for peer review.
 
 ## AUTOMATED TESTING
+
+### Python Linter
+
+I used [Pyrhon Linter - Pep8CI](https://pep8ci.herokuapp.com/) to test for error, most of the errors returned were related to formating such as spacing or long lines of code, those were all fixed.
+
+![Pyrhon Linter - errors](docs/testing/python-linter-errors.png)
+
+![Pyrhon Linter - no errors](docs/testing/python-linter-no-errors.png)
 
 ### Lighthouse
 
@@ -98,7 +107,7 @@ Each device tested the site using the following browsers:
 
 | ID  | CLASS | FEATURE          | DESCRIPTION                                                                          | STEPS TO REPRODUCE                                                                                                                                                           | ACTUAL RESULT                                                                                                                                  | EXPECTED RESULT                                                            | ACTION                                                                                                        | STATUS |
 | --- | ----- | ---------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------ |
-| 1   | A     | Google sheets save data          | Encoding. The results for the player name do not get saved in the google spread. ![Bug 1](docs/testing/bugs/1/bug-1.jpg)                                          | Start the app > select Play > Enter a name > Observe the issue with the name not being displayed in the google sheet leaderboard                                                                            | The names do not save correctly into google docs but the scores do                                     | The names should be saved as well as the scores                        | Solution: added the global key to the variable in which the names are being stored called name. The global keyword is required because the function is changing the value of a variable that was defined outside the function. if the global keyword is not used then python will just create a new variable that is only available within that function and this was preventing the name to store properly.                                                         |  FIXED  |
+| 1   | A     | Google sheets save data          | Encoding. The results for the player name do not get saved in the google spread. ![Console log](docs/testing/bug1-console-log.png) ![Google sheets](docs/testing/bug1-google-sheets.png) ![Console log](docs/testing/bug1-undefined.png)                                          | Start the app > select Play > Enter a name > Observe the issue with the name not being displayed in the google sheet leaderboard                                                                            | The names do not save correctly into google docs but the scores do                                     | The names should be saved as well as the scores                        | Solution: added the global key to the variable in which the names are being stored called name. The global keyword is required because the function is changing the value of a variable that was defined outside the function. if the global keyword is not used then python will just create a new variable that is only available within that function and this was preventing the name to store properly.                                                         |  FIXED  |
 
 
 ### Known Bugs
