@@ -107,8 +107,6 @@ In the future, I would like to:
 
 - Refine the score counter so it would add more points the earlier the full word is guessed.
 
-- Add a Leaderboard.
-
 - Add colours to the terminal.
 
 - Add a feature in which the user can select words sorted by length.
