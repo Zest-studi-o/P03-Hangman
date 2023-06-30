@@ -55,7 +55,7 @@ def welcome_player():
     global name
     print(logo)
     while True:
-        name = input("Please enter your name: ").capitalize()
+        name = input("Please enter your name: \n").capitalize()
         print("\n")
 
         # Ensures that the user enters a name and this is not left blank
@@ -73,9 +73,9 @@ def welcome_player():
     while True:
         category = select_category()
 
-        decision = input(f"{name}, you have 6 lives "
+        decision = input(f"{name}, you have 6 lives \n"
                          f"and have selected {category}.\n"
-                         "Are you happy with your choice? (Y/N) ").upper()
+                         "Are you happy with your choice? (Y/N)\n").upper()
 
         if decision == "Y":
             print("Let's play. Good luck!\n")
@@ -169,7 +169,7 @@ def play(word):
     while not guessed and tries > 0:
         display_score(score)
 
-        guess = input("Please guess a letter or word: ").upper()
+        guess = input("Please guess a letter or word: /n").upper()
         if len(guess) == 1 and guess.isalpha():
 
             # Letter guessed repeated
