@@ -73,8 +73,8 @@ def welcome_player():
     while True:
         category = select_category()
 
-        decision = input(f"{name}, you have 6 lives \n"
-                         f"and have selected {category}.\n"
+        decision = input(f"{name}, you have 6 lives"
+                         f"and have selected: {category}.\n"
                          "Are you happy with your choice? (Y/N)\n").upper()
 
         if decision == "Y":
