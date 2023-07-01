@@ -55,7 +55,7 @@ def welcome_player():
     global name
     print(logo)
     while True:
-        name = input("Please enter your name: \n").capitalize()
+        name = input("Please enter your name: ").capitalize()
         print("\n")
 
         # Ensures that the user enters a name and this is not left blank

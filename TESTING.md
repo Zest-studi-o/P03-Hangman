@@ -4,7 +4,7 @@
 
 A version of the classic game The hangman using the command line and Python programming language deployed with Heroku.
 
-Visit the live site: [The Hangman]()
+Visit the live site: [The Hangman](https://p03-hangman-ebeea9faff7c.herokuapp.com/)
 
 ## CONTENTS
 
