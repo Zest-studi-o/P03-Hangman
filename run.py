@@ -169,7 +169,7 @@ def play(word):
     while not guessed and tries > 0:
         display_score(score)
 
-        guess = input("Please guess a letter or word: /n").upper()
+        guess = input("Please guess a letter or word: \n").upper()
         if len(guess) == 1 and guess.isalpha():
 
             # Letter guessed repeated

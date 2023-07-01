@@ -80,27 +80,45 @@ Here flowchart.
 
 #### Existing Features
 
+**Logo**
+
+![Logo](docs/features/logo.png)
+
+- The game Hangman visual identity.
+
 **Welcome screen**
 
-![Welcome screen]()
+![Welcome screen](docs/features/welcome-screen.png)
 
-- The user is welcomed to the game, the can input their name and ensure they are happy with their selected option.
+- The user is welcomed to the game, the logo displays and they can input their name and ensure they are happy with their selected option.
+
+**Play**
+
+![Play](docs/features/play.png)
+
+- After selecting play the user is prompted to a screen with the hangman stage 1, different stages are showing as the player progresses in the game.
 
 **Category selection**
 
-![Select category]()
+![Select category](docs/features/category.png)
 
 - The user can select a word category to play the game. When the user selects to start the game, the terminal displays options to select between different word categories grouped by themes.
 
 **Score counter**
 
-![Score counter]()
+![Score counter](docs/features/score.png)
 
 - This counts the score obtained by the player, adds 25 per letter guessed and 200 if the player guesses the word in full, it displays this data to the terminal for user feedback.
 
+**End Game screen**
+
+![End game](docs/features/end.png)
+
+- When finishing a game the user is prompted with a screen in which they can decide wheter to start a new game, have a look at the leaderboard, or exit the game.
+
 **Leaderboard**
 
-![Leaderboard]()
+![Leaderboard](docs/features/leaderboard.png)
 
 - When finishing the game the user can see the leaderboard showing the top 10 scores achieved by the players. 
 ---
@@ -110,6 +128,10 @@ Here flowchart.
 In the future, I would like to:
 
 - Refine the score counter so it would add more points the earlier the full word is guessed.
+
+- Refine the word display so no words would be repeated when a player selects the same category in consecutive games.
+
+- Refine the leaderboard, so the same name cannot be repeated with the same scores, avoid duplicate entries.
 
 - Add colours to the terminal.
 
