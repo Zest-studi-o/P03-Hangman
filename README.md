@@ -1,6 +1,6 @@
 # THE HANGMAN
 
-![Project Image](docs/project.png)
+![The Hangman mockup](docs/mockup.png)
 
 A version of the classic game The hangman using the command line and Python programming language deployed with Heroku.
 

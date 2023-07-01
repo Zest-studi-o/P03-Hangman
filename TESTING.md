@@ -1,6 +1,6 @@
 # THE HANGMAN
 
-![The Hangman]()
+![The Hangman mockup](docs/mockup.png)
 
 A version of the classic game The hangman using the command line and Python programming language deployed with Heroku.
 
@@ -41,12 +41,12 @@ I used Lighthouse within the Chrome Developer Tools to test the performance, acc
 
 #### Desktop Results
 
-![Desktop]()
+![Desktop](docs/testing/lighthouse/lighthouse-desktop.png)
 
 
 #### Mobile Results
 
-![Mobile]()
+![Mobile](docs/testing/lighthouse/lighthouse-mobile.png)
 
 ---
 
