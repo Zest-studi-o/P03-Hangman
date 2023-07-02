@@ -5,7 +5,7 @@ import random
 import os
 import sys
 
-from art import stages, logo
+from art import stages, logo, game_over, leaderboard_heading, end_line
 from words import word_list
 from countries import country_list
 from food_and_drink import fd_list
@@ -226,12 +226,16 @@ def play(word):
 
     # Player LOSES
     else:
+        display_name(name)
+        display_score(score)
+
         print("Sorry, you ran out of tries."
               "The word was " + word + ". Maybe next time!\n")
+        print(game_over)
 
     update_worksheet(score)
-    display_score(score)
-    display_name(name)
+    
+   
 
 
 def display_hangman(tries):
@@ -267,7 +271,6 @@ def update_worksheet(score):
     print("Updating Leaderboard...\n")
     worksheet_to_update = SHEET.worksheet("leaderboard")
 
-    display_leaderboard()
     worksheet_to_update.append_row([str(name[0:7]), score])
     print("\n")
     print("Leaderboard updated successfully.\n")
@@ -275,8 +278,10 @@ def update_worksheet(score):
 
 def display_leaderboard():
     """
-    Displays to the players the 15 best scores
+    Displays to the players the 10 best scores
     """
+
+    print(leaderboard_heading)
     score_sheet = SHEET.worksheet("leaderboard").get_all_values()[1:]
     for data in score_sheet:
         data[1] = (data[1])
@@ -291,6 +296,8 @@ def display_leaderboard():
     for i in range(0, count):
         print(f"""
         {i+1}\t{update_data[i][0]}\t  {update_data[i][1]}""")
+    print(end_line)
+    print("\n")
 
 def exit_program():
     """

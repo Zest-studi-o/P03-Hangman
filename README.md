@@ -240,6 +240,10 @@ All the words in the different categories are taken from:
 
 - [ASCII Art Generator - Logo](https://patorjk.com/software/taag/#p=display&v=0&f=Ogre&t=The%20Hangman)
 
+- [ASCII Art Generator - Leaderboard](https://patorjk.com/software/taag/#p=display&h=2&v=3&f=Digital&t=LEADERBOARD)
+
+- [ASCII Art - Game over](https://textart4u.blogspot.com/2013/05/game-over-text-art.html)
+
 ### Acknowledgments
 
 - [Derek MCAuley](https://github.com/derekmcauley7), my Code Institute Mentor.
