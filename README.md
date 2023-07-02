@@ -2,7 +2,7 @@
 
 ![The Hangman mockup](docs/mockup.png)
 
-A version of the classic game The hangman using the command line and Python programming language deployed with Heroku.
+A version of the popular and classic game The Hangman created and played using the command line and the Python programming language  which has been deployed with Heroku.
 
 Visit the live site: [The Hangman](https://p03-hangman-ebeea9faff7c.herokuapp.com/)
 
@@ -43,7 +43,7 @@ Visit the live site: [The Hangman](https://p03-hangman-ebeea9faff7c.herokuapp.co
 
 #### Key information for the site
 
-This section provides insight into the UX process, focusing on who this game is for, the main aims of the project and how it can help users meet their needs.
+This section provides insight into the UX process, with a focus on the people who this game has been created for, the main aims of the project and how it can help users to meet their needs.
 
 Project goals:
 
@@ -96,19 +96,25 @@ Here flowchart.
 
 ![Play](docs/features/play.png)
 
-- After selecting play the user is prompted to a screen with the hangman stage 1, different stages are showing as the player progresses in the game.
+- After selecting play the user is prompted to a screen with the hangman stage 1, different stages are displayed as the player progresses through the game.
 
 **Category selection**
 
 ![Select category](docs/features/category.png)
 
-- The user can select a word category to play the game. When the user selects to start the game, the terminal displays options to select between different word categories grouped by themes.
+- The user can choose a word category to play the game. When the user selects to start the game, the terminal displays options to select between different word categories which are grouped by theme.
 
 **Score counter**
 
 ![Score counter](docs/features/score.png)
 
 - This counts the score obtained by the player, adds 25 per letter guessed and 200 if the player guesses the word in full, it displays this data to the terminal for user feedback.
+
+**Game over**
+
+![Game over](docs/features/game-over.png)
+
+- When losing a game, the name of the player, score and game over ASCII Art are displayed.
 
 **End Game screen**
 
@@ -120,7 +126,7 @@ Here flowchart.
 
 ![Leaderboard](docs/features/leaderboard.png)
 
-- When finishing the game the user can see the leaderboard showing the top 10 scores achieved by the players. 
+- When finishing the game the user can see the leaderboard showing the top 10 scores achieved by previous players. 
 ---
 
 ### Features Left to Implement

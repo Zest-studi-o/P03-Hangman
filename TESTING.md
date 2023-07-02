@@ -2,7 +2,7 @@
 
 ![The Hangman mockup](docs/mockup.png)
 
-A version of the classic game The hangman using the command line and Python programming language deployed with Heroku.
+A version of the popular and classic game The Hangman created and played using the command line and the Python programming language  which has been deployed with Heroku.
 
 Visit the live site: [The Hangman](https://p03-hangman-ebeea9faff7c.herokuapp.com/)
 
