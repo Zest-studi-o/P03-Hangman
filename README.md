@@ -74,7 +74,7 @@ Project goals:
 
 ### Flowchart
 
-Here flowchart.
+![Flowchart](docs/hangman-flowchart.jpeg)
 
 ### Features
 
