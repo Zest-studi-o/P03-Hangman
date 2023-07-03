@@ -17,5 +17,5 @@ fd_list = ['MOZZARELLA',
            'LIME',
            'JUICE',
            'TOFU',
-           'OMELETTE',
+           'OMELETTE'
            ]

@@ -5,7 +5,7 @@ import random
 import os
 import sys
 
-from art import stages, logo, game_over, leaderboard_heading, end_line
+from art import stages, logo, game_over, leaderboard_heading, end_line, single_line
 from words import word_list
 from countries import country_list
 from food_and_drink import fd_list
@@ -30,10 +30,12 @@ data = leaderboard.get_all_values()
 CORRECT_GUESSED = 25
 FULL_WORD_SCORE = 200
 
-GAME_SELECT ="""Please select an option:\n
+GAME_SELECT = """
+Please select an option:\n
 1 - Play again\n
 2 - Leaderboard\n
-3 - Exit game\n"""
+3 - Exit game\n
+"""
 
 
 def clear():
@@ -73,7 +75,7 @@ def welcome_player():
     while True:
         category = select_category()
 
-        decision = input(f"{name}, you have 6 lives "
+        decision = input(f"\n{name}, you have 6 lives "
                          f"and have selected: {category}.\n"
                          "Are you happy with your choice? (Y/N)\n").upper()
 
@@ -169,22 +171,26 @@ def play(word):
     while not guessed and tries > 0:
         display_score(score)
 
+        print("\n")
         guess = input("Please guess a letter or word: \n").upper()
         if len(guess) == 1 and guess.isalpha():
 
             # Letter guessed repeated
             if guess in guessed_letters:
+                print("\n")
                 print("You already guessed the letter", guess)
 
             # Letter guessed NOT in the word
             elif guess not in word:
-                print(guess, "is not in the word.")
+                print("\n")
+                print(guess, "is not in the word.\n")
                 print("You have", (tries - 1), "attempts left.")
                 tries -= 1
                 guessed_letters.append(guess)
 
             # Letter guessed in the word
             else:
+                print("\n")
                 print("Good job,", guess, "is in the word!")
                 score += CORRECT_GUESSED
 
@@ -226,16 +232,16 @@ def play(word):
 
     # Player LOSES
     else:
+        print(game_over)
+
         display_name(name)
         display_score(score)
 
         print("Sorry, you ran out of tries."
               "The word was " + word + ". Maybe next time!\n")
-        print(game_over)
+        
 
     update_worksheet(score)
-    
-   
 
 
 def display_hangman(tries):
@@ -267,14 +273,14 @@ def update_worksheet(score):
     Update a new row in the Hangman worksheet
     This updates a new row with the name and score.
     """
-
+    print(single_line)
     print("Updating Leaderboard...\n")
     worksheet_to_update = SHEET.worksheet("leaderboard")
 
     worksheet_to_update.append_row([str(name[0:7]), score])
-    print("\n")
+    
     print("Leaderboard updated successfully.\n")
-
+    print(single_line)
 
 def display_leaderboard():
     """
@@ -299,6 +305,7 @@ def display_leaderboard():
     print(end_line)
     print("\n")
 
+
 def exit_program():
     """
     Function to exit the game
@@ -306,6 +313,7 @@ def exit_program():
     print(f"\n\tThanks for playing, {name}.\n")
     print(f"\n\tExiting the game..")
     sys.exit(0)
+
 
 def main():
     """
@@ -323,7 +331,7 @@ def main():
 
         user_input = input(f"{GAME_SELECT}").upper()
         if user_input == "1":
-            print(f"\n\tYou have selected to continue playing.\n")
+            print(f"\nYou have selected to continue playing.\n")
             play_game = True
         elif user_input == "2":
             display_leaderboard()
@@ -331,7 +339,7 @@ def main():
         elif user_input == "3":
             exit_program()
         else:
-            print(f"""\n\t
+            print(f"""\n
             That is not a valid option. Please try again.\n""")
             play_game = False
 
