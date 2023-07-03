@@ -6,7 +6,8 @@ import os
 import sys
 
 from art import stages, logo, game_over, \
-                leaderboard_heading, end_line, single_line
+                leaderboard_heading, end_line, \
+                single_line, you_win
 from words import word_list
 from countries import country_list
 from food_and_drink import fd_list
@@ -227,7 +228,8 @@ def play(word):
 
     # Player WINS
     if guessed:
-        print("Congrats, you guessed the word! You win!\n")
+        print(you_win)
+        print("\nCongrats, you guessed the word!\n")
         # Adds extra score if the full word is guessed
         score = score + FULL_WORD_SCORE
 
@@ -238,8 +240,8 @@ def play(word):
         display_name(name)
         display_score(score)
 
-        print("Sorry, you ran out of tries."
-              "The word was " + word + ". Maybe next time!\n")
+        print("Sorry, you ran out of tries. \
+              The word was " + word + ". Maybe next time!\n")
 
     update_worksheet(score)
 
