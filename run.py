@@ -5,7 +5,8 @@ import random
 import os
 import sys
 
-from art import stages, logo, game_over, leaderboard_heading, end_line, single_line
+from art import stages, logo, game_over, \
+                leaderboard_heading, end_line, single_line
 from words import word_list
 from countries import country_list
 from food_and_drink import fd_list
@@ -239,7 +240,6 @@ def play(word):
 
         print("Sorry, you ran out of tries."
               "The word was " + word + ". Maybe next time!\n")
-        
 
     update_worksheet(score)
 
@@ -274,13 +274,14 @@ def update_worksheet(score):
     This updates a new row with the name and score.
     """
     print(single_line)
-    print("Updating Leaderboard...\n")
+    print("\tUpdating Leaderboard...\n")
     worksheet_to_update = SHEET.worksheet("leaderboard")
 
     worksheet_to_update.append_row([str(name[0:7]), score])
-    
-    print("Leaderboard updated successfully.\n")
+
+    print("\tLeaderboard updated successfully.\n")
     print(single_line)
+
 
 def display_leaderboard():
     """
