@@ -71,8 +71,6 @@ def welcome_player():
 
     print(f"Welcome to the game, {name}!")
 
-    # Starts scores at value 0
-    score = 0
 
     while True:
         category = select_category()
@@ -161,6 +159,7 @@ def play(word):
     guessed_words = []
     guessed_wrong = []
     tries = 6
+    # Starts scores at value 0
     score = 0
 
 # Welcome messages
@@ -323,7 +322,7 @@ def exit_program():
 
 def main():
     """
-    Main function: it gets a word and pass it to play,
+    Main function: it gets a word and pass it to play.
     When finishing the game asks the user input for:
     1 - Play again
     2 - Leaderboard
