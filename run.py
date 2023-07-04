@@ -6,7 +6,7 @@ import os
 import sys
 
 from art import stages, logo, game_over, \
-                leaderboard_heading, end_line, \
+                leader_board_heading, end_line, \
                 single_line, you_win
 from words import word_list
 from countries import country_list
@@ -22,9 +22,9 @@ SCOPE = [
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('hangman_leaderboard')
+SHEET = GSPREAD_CLIENT.open('hangman_leader_board')
 
-leaderboard = SHEET.worksheet("leaderboard")
+leaderboard = SHEET.worksheet("leader_board")
 
 data = leaderboard.get_all_values()
 
@@ -35,7 +35,7 @@ FULL_WORD_SCORE = 200
 GAME_SELECT = """
 Please select an option:\n
 1 - Play again\n
-2 - Leaderboard\n
+2 - Leader board\n
 3 - Exit game\n
 """
 
@@ -70,7 +70,6 @@ def welcome_player():
             break
 
     print(f"Welcome to the game, {name}!")
-
 
     while True:
         category = select_category()
@@ -242,8 +241,8 @@ def play(word):
         display_name(name)
         display_score(score)
 
-        print("Sorry, you ran out of tries. \
-              The word was " + word + ". Maybe next time!\n")
+        print("Sorry, you ran out of tries.\n")
+        print("The word was " + word + ". Maybe next time!\n")
 
     update_worksheet(score)
 
@@ -278,22 +277,22 @@ def update_worksheet(score):
     This updates a new row with the name and score.
     """
     print(single_line)
-    print("\tUpdating Leaderboard...\n")
-    worksheet_to_update = SHEET.worksheet("leaderboard")
+    print("\tUpdating Leader board...\n")
+    worksheet_to_update = SHEET.worksheet("leader_board")
 
     worksheet_to_update.append_row([str(name[0:7]), score])
 
-    print("\tLeaderboard updated successfully.\n")
+    print("\tLeader board updated successfully.\n")
     print(single_line)
 
 
-def display_leaderboard():
+def display_leader_board():
     """
     Displays to the players the 10 best scores
     """
 
-    print(leaderboard_heading)
-    score_sheet = SHEET.worksheet("leaderboard").get_all_values()[1:]
+    print(leader_board_heading)
+    score_sheet = SHEET.worksheet("leader_board").get_all_values()[1:]
     for data in score_sheet:
         data[1] = (data[1])
 
@@ -315,8 +314,10 @@ def exit_program():
     """
     Function to exit the game
     """
+    print(single_line)
     print(f"\n\tThanks for playing, {name}.\n")
-    print(f"\n\tExiting the game..")
+    print(f"\n\tExiting the game...\n")
+    print(single_line)
     sys.exit(0)
 
 
@@ -325,7 +326,7 @@ def main():
     Main function: it gets a word and pass it to play.
     When finishing the game asks the user input for:
     1 - Play again
-    2 - Leaderboard
+    2 - Leader board
     3 - Exit game
     """
     play_game = True
@@ -339,7 +340,7 @@ def main():
             print(f"\nYou have selected to continue playing.\n")
             play_game = True
         elif user_input == "2":
-            display_leaderboard()
+            display_leader_board()
             play_game = False
         elif user_input == "3":
             exit_program()

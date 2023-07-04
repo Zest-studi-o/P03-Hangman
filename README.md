@@ -2,7 +2,7 @@
 
 ![The Hangman mockup](docs/mockup.png)
 
-A version of the popular and classic game The Hangman created and played using the command line and the Python programming language  which has been deployed with Heroku.
+A version of the popular and classic game The Hangman created and played using the command line and the Python programming language which has been deployed with Heroku.
 
 Visit the live site: [The Hangman](https://p03-hangman-ebeea9faff7c.herokuapp.com/)
 
@@ -55,7 +55,7 @@ Project goals:
 
 #### First-Time Visitor Goals
 
-- As a first-time visitor, I want to start a new game using the comand line.
+- As a first-time visitor, I want to start a new game using the command line.
 - As a first-time visitor, I want to see how many attempts I have left when playing.
 - As a first-time visitor, I want to see the words I guessed so far displayed.
 - As a first-time visitor, I want the app to ask me if I want to play again or not when finishing.
@@ -108,7 +108,7 @@ Project goals:
 
 ![Score counter](docs/features/score.png)
 
-- This counts the score obtained by the player, adds 25 per letter guessed and 200 if the player guesses the word in full, it displays this data to the terminal for user feedback.
+- This counts the score obtained by the player, it adds 25 per letter guessed and 200 if the player guesses the word in full, it displays this data to the terminal for user feedback.
 
 **Game over**
 
@@ -120,13 +120,14 @@ Project goals:
 
 ![End game](docs/features/end.png)
 
-- When finishing a game the user is prompted with a screen in which they can decide wheter to start a new game, have a look at the leaderboard, or exit the game.
+- When finishing a game the user is prompted with a screen in which they can decide whether to start a new game, have a look at the leader board, or exit the game.
 
-**Leaderboard**
+**Leader board**
 
-![Leaderboard](docs/features/leaderboard.png)
+![Leader board](docs/features/leaderboard.png)
 
-- When finishing the game the user can see the leaderboard showing the top 10 scores achieved by previous players. 
+- When finishing the game the user can see the leader board showing the top 10 scores achieved by previous players.
+
 ---
 
 ### Features Left to Implement
@@ -137,11 +138,11 @@ In the future, I would like to:
 
 - Refine the word display so no words would be repeated when a player selects the same category in consecutive games.
 
-- Refine the leaderboard, so the same name cannot be repeated with the same scores, avoid duplicate entries.
+- Refine the leader board, so the same name cannot be repeated with the same scores, avoid duplicate entries.
 
 - Add colours to the terminal.
 
-- Add more ASCII art and formating to the terminal.
+- Add more ASCII art and formatting to the terminal.
 
 - Add a feature in which the user can select words sorted by length.
 
@@ -191,14 +192,14 @@ The language used is Python
 6. The next page is the project’s Deploy Tab. Click on the Settings Tab and scroll down to Config Vars
 7. Click Reveal Config Vars and enter port into the Key box and 8000 into the Value box and click the Add button
 8. Click Reveal Config Vars again and enter CREDS into the Key box and the Google credentials into the Value box
-9. Next, scroll down to the Buildpack section click Add Buildpack select Python and click Save Changes
-10. Repeat step 8 to add node.js. o Note: The Buildpacks must be in the correct order. If not click and drag them to move into the correct order
+9. Next, scroll down to the Build pack section click Add Build pack select Python and click Save Changes
+10. Repeat step 8 to add node.js. o Note: The Build packs must be in the correct order. If not click and drag them to move into the correct order
 11. Scroll to the top of the page and choose the Deploy tab
 12. Select Github as the deployment method
 13. Confirm you want to connect to GitHub
 14. Search for the repository name and click the connect button
 15. Scroll to the bottom of the deploy page and select the preferred deployment type
-16. Click either Enable Automatic Deploys for automatic deployment when you push updates to Github
+16. Click either Enable Automatic Deploys for automatic deployment when you push updates to GitHub
 
 ### Local Development
 
@@ -232,7 +233,7 @@ Please refer to [TESTING.md](TESTING.md) file for all testing carried out.
 
 - [How to build HANGMAN with Python in 10 MINUTES](https://www.youtube.com/watch?v=m4nEnsavl6w) - I used this tutorial to help me with understanding how to create a basic hangman game to build upon it using Python.
 
-- I used other student examples as a reference to understand how to build my own game and what is expected for the app and readme.md, [Hangaman 1](https://github.com/PedroCristo/portfolio_project_3), [Hangaman 2](https://github.com/one1189/hangman) those projects were also helpful to find resources that helped me build the game, such as the use of ASCII Art, Lucid Chart, Colorama or reference material.
+- I used other student examples as a reference to understand how to build my own game and what is expected for the app and readme, [Hangman 1](https://github.com/PedroCristo/portfolio_project_3), [Hangman 2](https://github.com/one1189/hangman) those projects were also helpful to find resources that helped me build the game, such as the use of ASCII Art, Lucid Chart, Colorama or reference material.
 
 ### Content
 
@@ -246,7 +247,7 @@ All the words in the different categories are taken from:
 
 - [ASCII Art Generator - Logo](https://patorjk.com/software/taag/#p=display&v=0&f=Ogre&t=The%20Hangman)
 
-- [ASCII Art Generator - Leaderboard](https://patorjk.com/software/taag/#p=display&h=2&v=3&f=Digital&t=LEADERBOARD)
+- [ASCII Art Generator - Leader board](https://patorjk.com/software/taag/#p=display&h=2&v=3&f=Digital&t=LEADERBOARD)
 
 - [ASCII Art - Game over](https://textart4u.blogspot.com/2013/05/game-over-text-art.html)
 
@@ -255,4 +256,3 @@ All the words in the different categories are taken from:
 ### Acknowledgments
 
 - [Derek MCAuley](https://github.com/derekmcauley7), my Code Institute Mentor.
-- Tutor support at Code Institute.
