@@ -159,6 +159,7 @@ def play(word):
     guessed = False
     guessed_letters = []
     guessed_words = []
+    guessed_wrong = []
     tries = 6
     score = 0
 
@@ -173,7 +174,8 @@ def play(word):
     while not guessed and tries > 0:
         display_score(score)
 
-        print("\n")
+        # Gives feedback to the user about the letters guessed wrong
+        print(f"Incorret guesses: {','.join(guessed_wrong)}\n")
         guess = input("Please guess a letter or word: \n").upper()
         if len(guess) == 1 and guess.isalpha():
 
@@ -188,6 +190,7 @@ def play(word):
                 print(guess, "is not in the word.\n")
                 print("You have", (tries - 1), "attempts left.")
                 tries -= 1
+                guessed_wrong.append(guess)
                 guessed_letters.append(guess)
 
             # Letter guessed in the word
