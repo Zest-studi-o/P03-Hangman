@@ -170,6 +170,12 @@ The language used is Python
 
 [Amiresponsive](https://ui.dev/amiresponsive) - To generate a mockup in different screen sizes.
 
+[Bandicam](https://www.bandicam.com/es/) - To screen record bugs and features.
+
+[Windows photo feature](https://www.microsoft.com/en-us/windows/photo-movie-editor) - To trim screen recording.
+
+[Veed](https://www.veed.io/convert/mp4-to-gif?gad=1&gclid=CjwKCAjwgqejBhBAEiwAuWHioCzHSc5XTTdsnixrxavlvLKEi4i_YeN__Xol0nANQCBhw60caeyF3RoC31wQAvD_BwE) - To convert mp4 to gif
+
 [Colorama](https://pypi.org/project/colorama/) - To change colours in the terminal
 
 [Heroku](https://id.heroku.com/) - To deploy the App.
