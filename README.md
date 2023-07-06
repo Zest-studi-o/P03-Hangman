@@ -138,7 +138,7 @@ In the future, I would like to:
 
 - Refine the word display so no words would be repeated when a player selects the same category in consecutive games.
 
-- Refine the leader board, so the same name cannot be repeated with the same scores, avoid duplicate entries.
+- Refine the leader board, so the same name cannot be repeated with the same scores, to avoid duplicate entries.
 
 - Add colours to the terminal.
 
