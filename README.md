@@ -92,17 +92,17 @@ Project goals:
 
 - The user is welcomed to the game, the logo displays and they can input their name and ensure they are happy with their selected option.
 
-**Play**
-
-![Play](docs/features/play.png)
-
-- After selecting play the user is prompted to a screen with the hangman stage 1, different stages are displayed as the player progresses through the game.
-
 **Category selection**
 
 ![Select category](docs/features/category.png)
 
 - The user can choose a word category to play the game. When the user selects to start the game, the terminal displays options to select between different word categories which are grouped by theme.
+
+**Play**
+
+![Play](docs/features/play.png)
+
+- After selecting a category and confirming that they are happy to play the user is prompted to a screen with the hangman stage 1, different stages are displayed as the player progresses through the game.
 
 **Score counter**
 
@@ -112,7 +112,8 @@ Project goals:
 
 **Game over**
 
-![Game over](docs/features/game-over.png)
+![Game over art](docs/features/game-over-art.png)
+![Game over message](docs/features/game-over-message.png)
 
 - When losing a game, the name of the player, score and game over ASCII Art are displayed.
 
@@ -176,13 +177,11 @@ The language used is Python
 
 [Veed](https://www.veed.io/convert/mp4-to-gif?gad=1&gclid=CjwKCAjwgqejBhBAEiwAuWHioCzHSc5XTTdsnixrxavlvLKEi4i_YeN__Xol0nANQCBhw60caeyF3RoC31wQAvD_BwE) - To convert mp4 to gif
 
-[Colorama](https://pypi.org/project/colorama/) - To change colours in the terminal
-
 [Heroku](https://id.heroku.com/) - To deploy the App.
 
 [Code Institute template](https://github.com/Code-Institute-Org/p3-template) - To run the game in the terminal using Heroku.
 
-[ASCII Art Generator](https://patorjk.com/)
+[ASCII Art Generator](https://patorjk.com/) - To generate ASCII Art
 
 ## Deployment & Local Development
 
@@ -239,7 +238,7 @@ Please refer to [TESTING.md](TESTING.md) file for all testing carried out.
 
 - [How to build HANGMAN with Python in 10 MINUTES](https://www.youtube.com/watch?v=m4nEnsavl6w) - I used this tutorial to help me with understanding how to create a basic hangman game to build upon it using Python.
 
-- I used other student examples as a reference to understand how to build my own game and what is expected for the app and readme, [Hangman 1](https://github.com/PedroCristo/portfolio_project_3), [Hangman 2](https://github.com/one1189/hangman) those projects were also helpful to find resources that helped me build the game, such as the use of ASCII Art, Lucid Chart, Colorama or reference material.
+- I used other student examples as a reference to understand how to build my own game and what is expected for the app and readme, [Hangman 1](https://github.com/PedroCristo/portfolio_project_3), [Hangman 2](https://github.com/one1189/hangman) those projects were also helpful to find resources that helped me build the game, such as the use of ASCII Art, Lucid Chart, or other reference material.
 
 ### Content
 
