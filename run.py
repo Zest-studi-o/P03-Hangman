@@ -72,23 +72,45 @@ def welcome_player():
     print(f"Welcome to the game, {name}!")
 
     while True:
+        global category
         category = select_category()
-
-        decision = input(f"\n{name}, you have 6 lives "
-                         f"and have selected: {category}.\n"
-                         "Are you happy with your choice? (Y/N)\n").upper()
+        global decision 
+        decision = happy_choice ()
 
         if decision == "Y":
-            print("Let's play. Good luck!\n")
+             print("Let's play. Good luck!\n")
+             break
+        elif decision == "N":
+             clear()
+             print(logo)
+
+        else:
+             print("Invalid input. Please enter 'Y' or 'N'.\n")
+             
+            
+    return category
+    
+
+def happy_choice():
+    """
+    Ensures that the user is happy with the choice,
+    if there is invalid input it loops until the 
+    player has selected Y or N.
+    """
+    while True:
+        decision = input(f"\n{name}, you have 6 lives "
+                    f"and have selected: {category}.\n"
+                    "Are you happy with your choice? (Y/N)\n").upper()
+        if decision == "Y":
+            print("Ready to start a game? (Y/N)\n")
             break
         elif decision == "N":
             clear()
             print(logo)
+            select_category()
         else:
-            print("Invalid input. Please enter 'Y' or 'N'.\n")
-
-    return category
-
+            print("\nInvalid input. Please enter 'Y' or 'N'.\n")
+    return decision
 
 def select_category():
     """
@@ -173,7 +195,7 @@ def play(word):
         display_score(score)
 
         # Gives feedback to the user about the letters guessed wrong
-        print(f"Incorret guesses: {','.join(guessed_wrong)}\n")
+        print(f"Incorrect guesses: {','.join(guessed_wrong)}\n")
         guess = input("Please guess a letter or word: \n").upper()
         if len(guess) == 1 and guess.isalpha():
 
