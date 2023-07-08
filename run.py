@@ -74,33 +74,31 @@ def welcome_player():
     while True:
         global category
         category = select_category()
-        global decision 
-        decision = happy_choice ()
+        global decision
+        decision = happy_choice()
 
         if decision == "Y":
-             print("Let's play. Good luck!\n")
-             break
+            print("Let's play. Good luck!\n")
+            break
         elif decision == "N":
-             clear()
-             print(logo)
+            clear()
+            print(logo)
 
         else:
-             print("Invalid input. Please enter 'Y' or 'N'.\n")
-             
-            
+            print("Invalid input. Please enter 'Y' or 'N'.\n")
     return category
-    
+
 
 def happy_choice():
     """
     Ensures that the user is happy with the choice,
-    if there is invalid input it loops until the 
+    if there is invalid input it loops until the
     player has selected Y or N.
     """
     while True:
         decision = input(f"\n{name}, you have 6 lives "
-                    f"and have selected: {category}.\n"
-                    "Are you happy with your choice? (Y/N)\n").upper()
+                         f"and have selected: {category}.\n"
+                         "Are you happy with your choice? (Y/N)\n").upper()
         if decision == "Y":
             print("Ready to start a game? (Y/N)\n")
             break
@@ -111,6 +109,7 @@ def happy_choice():
         else:
             print("\nInvalid input. Please enter 'Y' or 'N'.\n")
     return decision
+
 
 def select_category():
     """
