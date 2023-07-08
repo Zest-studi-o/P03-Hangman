@@ -82,52 +82,63 @@ Project goals:
 
 **Logo**
 
-![Logo](docs/features/logo.png)
-
 - The game Hangman visual identity.
+
+![Logo](docs/features/logo.png)
 
 **Welcome screen**
 
-![Welcome screen](docs/features/welcome-screen.png)
-
 - The user is welcomed to the game, the logo displays and they can input their name and ensure they are happy with their selected option.
+
+![Welcome screen](docs/features/welcome-screen.png)
 
 **Category selection**
 
-![Select category](docs/features/category.png)
-
 - The user can choose a word category to play the game. When the user selects to start the game, the terminal displays options to select between different word categories which are grouped by theme.
+
+![Select category](docs/features/category.png)
 
 **Play**
 
-![Play](docs/features/play.png)
-
 - After selecting a category and confirming that they are happy to play the user is prompted to a screen with the hangman stage 1, different stages are displayed as the player progresses through the game.
+
+![Play](docs/features/play.png)
 
 **Score counter**
 
-![Score counter](docs/features/score.png)
-
 - This counts the score obtained by the player, it adds 25 per letter guessed and 200 if the player guesses the word in full, it displays this data to the terminal for user feedback.
 
+![Score counter](docs/features/score.png)
+
 **Game over**
+
+- When losing a game, the name of the player, score and game over ASCII Art are displayed.
 
 ![Game over art](docs/features/game-over-art.png)
 ![Game over message](docs/features/game-over-message.png)
 
-- When losing a game, the name of the player, score and game over ASCII Art are displayed.
-
 **End Game screen**
-
-![End game](docs/features/end.png)
 
 - When finishing a game the user is prompted with a screen in which they can decide whether to start a new game, have a look at the leader board, or exit the game.
 
+![End game](docs/features/end.png)
+
 **Leader board**
+
+- When finishing the game the user can see the leader board showing the top 10 scores achieved by previous players.
 
 ![Leader board](docs/features/leaderboard.png)
 
-- When finishing the game the user can see the leader board showing the top 10 scores achieved by previous players.
+- The scores get stored in google sheets, the game returns the top 10 player name and scores from this database.
+  This sheet is connected to the code through the Google Drive and Google Sheet API by the Google Cloud Platform.
+
+![Leader board](docs/features/google-sheets.png)
+
+- This code connects google sheets and the game.
+
+![Connect code](docs/features/connect-code.png)
+
+![Import Gspread](docs/features/import-gspread.png)
 
 ---
 
