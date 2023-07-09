@@ -36,6 +36,8 @@ I used [Python Linter - Pep8CI](https://pep8ci.herokuapp.com/) to test for error
 
 ![Python Linter - no errors](docs/testing/python-linter-no-errors.png)
 
+Python Linter was ignored on art.py as the spaces are needed to form ASCII Art.
+
 ### Lighthouse
 
 I used Lighthouse within the Chrome Developer Tools to test the performance, accessibility, best practices and SEO of the website.
@@ -59,20 +61,20 @@ I used Lighthouse within the Chrome Developer Tools to test the performance, acc
 `First-Time Visitors`
 | Goals | How are they achieved? |
 | :--- | :--- |
-| As a first-time visitor, I want to start a new game using the command line. | The user can easily initiate a new game using the console |
-| As a first-time visitor, I want to see how many attempts I have left when playing. | There is a feature in which the user is notified how many attempts left are before finishing the game |
-| As a first-time visitor, I want to see the words I guessed so far displayed. | The user can see the words guessed correctly as part of the word in the console |
-| As a first-time visitor, I want the app to ask me if I want to play again or not when finishing. | The app asks the user whether they would like to continue or start a new game |
+| As a first-time visitor, I want to start a new game using the command line | The user can easily initiate a new game using the console |
+| As a first-time visitor, I want to see how many attempts I have left when playing | There is a feature in which the user is notified how many attempts left are before finishing the game |
+| As a first-time visitor, I want to see the words I guessed so far displayed | The user can see the words guessed correctly as part of the word in the console |
+| As a first-time visitor, I want the app to ask me if I want to play again or not when finishing | The app asks the user whether they would like to continue or start a new game |
 
 `Returning Visitors`
 | Goals | How are they achieved? |
 | :--- | :--- |
-| As a returning visitor, I want to see my results. | There is a feature which enables the user to see the results in the leader board. |
+| As a returning visitor, I want to see my results. | There is a feature which enables the user to see the results in the leader board |
 
 `Frequent Visitors`
 | Goals | How are they achieved? |
 | :--- | :--- |
-| As a frequent visitor, I want to be able to play the game using different categories. | The game select feature enables the user to select different categories |
+| As a frequent visitor, I want to be able to play the game using different categories | The game select feature enables the user to select different categories |
 
 ### Full Testing
 
@@ -121,6 +123,6 @@ Each device tested the site using the following browsers:
 
 ### Known Bugs
 
-Bug number 3 remains unfixed as this was difficult to reproduce at times and did not affect the game, it also doesn't display correctly in smaller screen sizes, but considering the display of this game is done in the terminal and no layout settings are available to reduce font sizes and that this is not a requirement for this project this was left as it is, the important part relies on the the game logic working correctly, which works as expected.
+Bug number 3 remains unfixed as this was difficult to reproduce at times and did not affect the game, the logo also doesn't display correctly in smaller screen sizes, but considering the display of this game is done in the terminal and no layout settings are available to reduce font sizes and that this is not a requirement for this project this was left as it is, the important part relies on the the game logic working correctly, which works as expected.
 
 ---

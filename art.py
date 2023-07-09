@@ -1,4 +1,5 @@
-stages = [  # final state: head, torso, both arms, and both legs
+stages = [
+                # final state: head, torso, both arms, and both legs
                 """
                    --------
                    |      |
@@ -15,7 +16,7 @@ stages = [  # final state: head, torso, both arms, and both legs
                    |      O
                    |     \\|/
                    |      |
-                   |     / 
+                   |     /
                    -
                 """,
                 # head, torso, and both arms
@@ -25,7 +26,7 @@ stages = [  # final state: head, torso, both arms, and both legs
                    |      O
                    |     \\|/
                    |      |
-                   |      
+                   |
                    -
                 """,
                 # head, torso, and one arm
@@ -35,7 +36,7 @@ stages = [  # final state: head, torso, both arms, and both legs
                    |      O
                    |     \\|
                    |      |
-                   |     
+                   |
                    -
                 """,
                 # head and torso
@@ -45,7 +46,7 @@ stages = [  # final state: head, torso, both arms, and both legs
                    |      O
                    |      |
                    |      |
-                   |     
+                   |
                    -
                 """,
                 # head
@@ -53,25 +54,25 @@ stages = [  # final state: head, torso, both arms, and both legs
                    --------
                    |      |
                    |      O
-                   |    
-                   |      
-                   |     
+                   |
+                   |
+                   |
                    -
                 """,
                 # initial empty state
                 """
                    --------
                    |      |
-                   |      
-                   |    
-                   |      
-                   |     
+                   |
+                   |
+                   |
+                   |
                    -
                 """
     ]
 
 logo = """
- _____ _                                                          
+ _____ _                                                      
 /__   \ |__   ___    /\  /\__ _ _ __   __ _ _ __ ___   __ _ _ __  
   / /\/ '_ \ / _ \  / /_/ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
  / /  | | | |  __/ / __  / (_| | | | | (_| | | | | | | (_| | | | |
@@ -81,7 +82,6 @@ logo = """
         """
 
 game_over = """
-
 ┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼
 ███▀▀▀██┼███▀▀▀███┼███▀█▄█▀███┼██▀▀▀
 ██┼┼┼┼██┼██┼┼┼┼┼██┼██┼┼┼█┼┼┼██┼██┼┼┼
@@ -116,7 +116,7 @@ leader_board_heading = """
  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 """
 
-end_line =  """
+end_line = """
  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 """
@@ -129,6 +129,6 @@ you_win = """
 ██    ██  ██████  ██    ██     ██     ██ ██ ███    ██ ██ 
  ██  ██  ██    ██ ██    ██     ██     ██ ██ ████   ██ ██ 
   ████   ██    ██ ██    ██     ██  █  ██ ██ ██ ██  ██ ██ 
-   ██    ██    ██ ██    ██     ██ ███ ██ ██ ██  ██ ██    
+   ██    ██    ██ ██    ██     ██ ███ ██ ██ ██  ██ ██
    ██     ██████   ██████       ███ ███  ██ ██   ████ ██
    """
